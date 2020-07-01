@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "es6", //目标语言的版本,由于各大浏览器陆续兼容es6,除了ie外选择高版本可节省编译文件大小
+        "module": "esnext", //生成代码的模板标准
+        "moduleResolution": "node", //模块解析,默认采用node方式
+        "allowSyntheticDefaultImports": true, //允许从没有设置默认导出的模块中默认导入
+        "esModuleInterop": true,
+        "sourceMap": true, //生成对应.map文件
+        "removeComments": false,
+        "rootDirs": ["./src"],
+        "baseUrl": "./src",
+        "paths": {
+            "@/*": ["./*"],
+        },
+        "jsx": "react",
+        "alwaysStrict": true,
+        "noUnusedLocals": true,
+        "importHelpers": true,
+        "experimentalDecorators": true,
+        "resolveJsonModule": true,
+        "lib": ["es7", "dom"],
+        "skipLibCheck": true,
+        "typeRoots": ["node", "node_modules/@types", "./typings"]
+    }
+}

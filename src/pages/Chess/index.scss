@@ -1,0 +1,26 @@
+@import 'global.scss';
+
+.wrap{
+    height: 100%;
+    @extend .center;
+    .chess{
+        width: 600px;
+        height: 625px;
+        background: url(~@/assets/img/timg.jpg) 0 0 no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+    }
+    //选择的层级尽量少,加快浏览器渲染
+    .chessman{
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 25px;
+        color: white;
+        border-radius: 50%;
+        border: 1px solid red;
+        position: absolute;
+        cursor: pointer;
+    }
+}

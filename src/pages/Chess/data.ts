@@ -1,0 +1,63 @@
+
+
+export const ChuType = [
+    {
+        type:'卒',
+        coordinate:[[0,6],[2,6],[4,6],[6,6],[8,6]]
+    },
+    {
+        type:'炮',
+        coordinate:[[1,7],[7,7]]
+    },
+    {
+        type:'車',
+        coordinate:[[0,9],[8,9]]
+    },
+    {
+        type:'馬',
+        coordinate:[[1,9],[7,9]]
+    },
+    {
+        type:'象',
+        coordinate:[[2,9],[6,9]]
+    },
+    {
+        type:'士',
+        coordinate:[[3,9],[5,9]]
+    },
+    {
+        type:'将',
+        coordinate:[[4,9]]
+    }
+]
+
+export const HanType = [
+    {
+        type:'兵',
+        coordinate:[[0,3],[2,3],[4,3],[6,3],[8,3]]
+    },
+    {
+        type:'炮',
+        coordinate:[[1,2],[7,2]]
+    },
+    {
+        type:'車',
+        coordinate:[[0,0],[8,0]]
+    },
+    {
+        type:'馬',
+        coordinate:[[1,0],[7,0]]
+    },
+    {
+        type:'相',
+        coordinate:[[2,0],[6,0]]
+    },
+    {
+        type:'士',
+        coordinate:[[3,0],[5,0]]
+    },
+    {
+        type:'帅',
+        coordinate:[[4,0]]
+    }
+]
