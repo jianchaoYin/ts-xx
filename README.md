@@ -1,8 +1,4 @@
-This is a simple (admin) starter with typescript, react and webpack.
-
-Have a quick view:
-
-<img src="./screenshot.png" width="900">
+This is a simple test with ts and react
 
 ## setup
 
@@ -10,12 +6,6 @@ Have a quick view:
 
 ```bash
 $ npm i
-```
-
-## test
-
-```bash
-$ npm test
 ```
 
 ## build for development
@@ -30,10 +20,6 @@ $ npm run dev
 $ npm run build:(qa/prod)
 ```
 
-## server
-
-We do not use any mock tools(Anyway, you can use the data format from server response to achieve it!), all data interaction depends on [a real node service with nest and mongodb](https://github.com/jackple/showcase). Integration is in our future plan! We will make sure that you still can fully separate client and server side. 😁😁😁
-
 ## characteristics
 
 -   use [ant design](https://ant.design/index-cn) as UI framework
@@ -41,18 +27,7 @@ We do not use any mock tools(Anyway, you can use the data format from server res
 -   use ServiceWorker by [workbox-webpack-plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin)
 -   import svg icon as a component by `@svgr/webpack`, [there is an example in the doc of steamer-react-redux-ts](https://github.com/YDJ-FE/steamer-react-ts/blob/master/docs/svg.md)
 -   create component folder by `customaddcomponents` which is added to npm script `npm run add`
--   use husky{pre-commit/commit-msg} hooks
--   use [react-intl-universal](https://github.com/alibaba/react-intl-universal) for i18n.
--   use [react-virtualized](https://github.com/bvaughn/react-virtualized) for fat list.
 
-## pages
-
--   The Index page became a [Socket Debugger](https://starter.jackple.com/#/)
-
-## TODO
-
--   config menu by user with permission
--   more functional pages like Socket Debugger
 
 ## component example
 
