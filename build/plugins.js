@@ -37,6 +37,7 @@ const devPlugins = [
     new HtmlWebpackPlugin({
         filename: 'index.html',
         template: 'build/tpl/index.html',
+        favicon: 'build/tpl/favicon.ico',
         inject: true
     }),
     new CaseSensitivePathsPlugin(), //用于区分路径大小写的插件,多用于osx
@@ -48,6 +49,7 @@ const prodPlugins = [
     new HtmlWebpackPlugin({
         filename: config.index,
         template: 'build/tpl/index.html',
+        favicon: 'build/tpl/favicon.ico',
         inject: true,
         minify: {
             //丑陋的压缩html

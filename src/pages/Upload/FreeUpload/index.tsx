@@ -1,27 +1,51 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React from 'react'
+import { ComponentExt } from '@/utils/reactExt'
 
 interface Uploader{
     size: number;
 }
 
-export default class FreeUploader extends Component<Uploader>{
+export default class FreeUploader extends ComponentExt<Uploader>{
 
     private size: number = this.props.size
 
-    private formData: FormData = new FormData() 
+    //创造切片
+    createFileSlice(file: File){
+        const files: Blob[] = []
+        let index: number = 0
+        while( index < file.size ){
+            files.push(file.slice(index,index+this.size))
+            index+= this.size
+        }
+        return files
+    }
 
     //上传文件
-    fileChange( e ){
+    async fileChange( e ){
         //取得文件
         const [ file ] = e.target.files
-        this.formData.append( 'file',file )
+        //取得切片
+        const files = this.createFileSlice(file)
+        //封装切片
+        const fileRequest =  files.map((item: Blob,index: number) => {
+            const fm = new FormData()
+            fm.append('chunk',item)
+            fm.append('index',String(index))
+            fm.append('name',file.name)
+            fm.append('size',file.size)
+            fm.append('uuid','test')
+            return { fm }
+        }).map(({ fm })=>{
+            return new Promise(async(resolve) =>{
+                const res = await this.api.upload.uploadFile(fm)
+                resolve(res)
+            })
+        })
+        //上传切片
+        await Promise.all(fileRequest)
+        //上传结束
+        await this.api.upload.uploadFileAll({ name:file.name, uuid: 'test',size:file.size })
 
-        axios.post('http://192.168.1.14:8080/upload/slice', this.formData, { headers:{
-            'Content-Type':'application/x-www-form-urlencoded'
-        }}).then(res => {
-            console.log(res)
-        }).catch()
     }
     render(){
         return (
